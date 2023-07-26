@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  public productName = "Assassin's Creed"
 
-  public productCount = 3
-  public isLowInventory = false
   public productId = 0
 
+  public isRowSelected = false
+  public rowIndex = -1
+
   public getProductId() {
-    this.productId++
+    this.productId = this.productId+1
 
     return this.productId
   }
@@ -49,9 +49,9 @@ export class ProductsComponent {
     }
   ]
 
-  public getProductCount() {
-    if (this.productCount<=5) this.isLowInventory = true
-
-    return this.productCount
+  public selectProduct(selectedRow : number) {
+    this.isRowSelected = !this.isRowSelected
+    if(this.isRowSelected) this.rowIndex = selectedRow
+    else this.rowIndex = -1
   }
 }

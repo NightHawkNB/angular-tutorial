@@ -10,7 +10,6 @@
             <th scope="col">Product Id</th>
             <th scope="col">Product Name</th>
             <th scope="col">Product Genres</th>
-            <th scope="col">Available Platforms</th>
             <th scope="col">Available Count</th>
             <th scope="col">Price</th>
             <th scope="col">Availability</th>
@@ -18,20 +17,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products">
-            <td scope="row">1</td>
-            <td>{{product.id}}</td>
+          <tr *ngFor="let product of products let i = index" (click)="selectProduct(i)" [ngClass]="rowIndex == i ? 'active' : ''">
+            <th scope="row">{{product.id}}</th>
             <td>{{product.name}}</td>
             <td>{{product.genre}}</td>
-            <td [ngClass]="isLowInventory ? 'bg-danger' : ''">{{product.available}}</td>
+            <td>{{product.available}}</td>
+            <td>{{product.price}}</td>
             <td>
               <p *ngIf="product.available <= 10">Lower Inventory</p>
               <p *ngIf="product.available > 10">Sufficient Inventory</p>
             </td>
-            <td>{{product.price}}</td>
-            <td>
-              <i class="fa fa-eye icon"></i>
-              <i class="fa fa-pencil-square-o icon"></i>
+            <td colspan="3">
+              <button type="button" [disabled]="rowIndex !=i && !isRowSelected" class="btn-xs icon"><i class="fa fa-eye icon"></i></button>
+              <button type="button" [disabled]="rowIndex !=i && !isRowSelected" class="btn-xs icon"><i class="fa fa-pencil-square-o icon"></i></button>
             </td>
           </tr>
         </tbody>

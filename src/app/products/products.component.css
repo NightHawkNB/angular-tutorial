@@ -19,11 +19,16 @@ table tbody tr td {
   cursor: pointer;
 }
 
-table tbody tr td:hover{
+table tbody tr:hover td{
   background-color: #c8daf8;
 }
 
 .icon{
   color: rgb(99, 98, 98);
   margin: 5px
+}
+
+
+table tbody tr.active td {
+  background-color: #c8daf8;
 }
