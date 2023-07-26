@@ -28,6 +28,10 @@ table tbody tr:hover td{
   margin: 5px
 }
 
+.btn-xs {
+  margin: 1px;
+  border-radius: 2px;
+}
 
 table tbody tr.active td {
   background-color: #c8daf8;

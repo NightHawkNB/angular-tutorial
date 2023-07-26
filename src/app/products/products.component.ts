@@ -50,8 +50,7 @@ export class ProductsComponent {
   ]
 
   public selectProduct(selectedRow : number) {
-    this.isRowSelected = !this.isRowSelected
-    if(this.isRowSelected) this.rowIndex = selectedRow
-    else this.rowIndex = -1
+    this.isRowSelected = true
+    this.rowIndex = selectedRow
   }
 }

@@ -28,8 +28,8 @@
               <p *ngIf="product.available > 10">Sufficient Inventory</p>
             </td>
             <td colspan="3">
-              <button type="button" [disabled]="rowIndex !=i && !isRowSelected" class="btn-xs icon"><i class="fa fa-eye icon"></i></button>
-              <button type="button" [disabled]="rowIndex !=i && !isRowSelected" class="btn-xs icon"><i class="fa fa-pencil-square-o icon"></i></button>
+              <button type="button" [disabled]="rowIndex !=i || !isRowSelected" class="btn-xs icon"><i class="fa fa-eye icon"></i></button>
+              <button type="button" [disabled]="rowIndex !=i || !isRowSelected" class="btn-xs icon"><i class="fa fa-pencil-square-o icon"></i></button>
             </td>
           </tr>
         </tbody>
